@@ -30,7 +30,7 @@ public class Function1
         var validationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
-            ValidIssuer = "https://dev-bflwigq6tavzwna5.us.auth0.com/",
+            ValidIssuer = "https://dev-5ad0jt24mzim62jm.us.auth0.com",
             ValidateAudience = false,
             ValidAudience = "https://my-azure-function-api",
             ValidateLifetime = true,
@@ -38,7 +38,7 @@ public class Function1
             {
                 // Fetch keys from Auth0 JWKS
                 var client = new HttpClient();
-                var keys = client.GetStringAsync("https://dev-bflwigq6tavzwna5.us.auth0.com/.well-known/jwks.json").Result;
+                var keys = client.GetStringAsync("https://dev-5ad0jt24mzim62jm.us.auth0.com/.well-known/jwks.json").Result;
                 var jwks = new JsonWebKeySet(keys);
                 return jwks.Keys;
             }
